@@ -29,6 +29,6 @@ puts "We need to put about #{average_passengers_per_car} in each car"
 #STUDY DRILLS
 #why was tehre an error with line 14 in Zed shaws example//The reason was because he did not define the varibale
 
-#What happens if you use 4 instead 4.0 in space_in_a_car// the result would be nearly identical except teh output of carpool_capcity would have no .0 at the end
+#What happens if you use 4 instead 4.0 in space_in_a_car// the result would be nearly identical except teh output of carpool_capcity would have no .0 at the endnit
 
 # = in Ruby is an assignment
