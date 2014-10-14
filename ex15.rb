@@ -19,3 +19,5 @@ txt_again = open(file_again)
 
 #prints the contents of the txt
 print txt_again.read
+
+#on section 4 of this exercise
