@@ -15,3 +15,6 @@ print txt_again.read
 txt = close(filename)
 txt_again = close(file_name)
 #on section 4 of this exercise
+
+#For the section on IRB, you must use the File.open("filename").
+#currentlty this section is not defined well. 

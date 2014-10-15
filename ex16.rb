@@ -28,13 +28,17 @@ line3 = $stdin.gets.chomp
 puts "I'm going to write these to the file."
 #this writes each line to the file. 
 
-target.write(line1)
-target.write("\n")
-target.write(line2)
-target.write("\n")
-target.write(line3)
-target.write("\n")
+target.write(line1 + "\n" + line2 + "\n" + line3 + "\n")
+
 
 puts "And finally, we close it."
 #closes the file and saves it
 target.close
+
+#Question asks to refactor code
+
+#Question 4: Find out why we had to pass 'w' as an extra parameter to open. Hint: open tries to be safe by making you explicily say you want to write a file.
+#w stands for write as well as create a new file. If you wanted to append, you can use a
+
+#Question 5: if You open the file with 'w' mode, do you really need the target.truncate()?
+#With no associated block, File.open is a synonym for ::new. This will create a new file and return its own argument
