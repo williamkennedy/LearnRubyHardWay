@@ -30,5 +30,6 @@ puts "You are #{first} #{second} and you are #{age} years old"
 #****
 #gets.chomp does not work with the ARGV which is very strange so instead of gets.chomp use ¢stdin.gets
 #I have to investigate why this is
+#stdin is more standard for reading the input of files
 
 
