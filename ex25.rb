@@ -8,12 +8,12 @@ module Ex25
 
 	# Sorts the words
 	def Ex25.sort_words(words)
-		return words.sort_words
+		return words.sort
 	end
 
 	# Prints the first word after shifting it off.
 	def Ex25.print_first_word(words)
-		word = word.shifting
+		word = words.shift
 		puts word
 	end
 
