@@ -42,3 +42,9 @@ elements.each {|i| puts "Element was : #{i}" }
 #.first and .last return the frist and last elements of the array respectfully
 #.take(num) will return the elements of the array up to num eg. arr.take(3) #=> [1,2,3]
 #.drop is the opposite of .take and returns the elements after the num arr.drop(3) #=> [4,5,6]
+#.length tells us the length of the array
+#.include?('variable') checks to see if the array includes a certain value
+#arr.push or << adds an item to an array
+#.unshift will add an item to the beginning of the array
+#.insert(position, value) adds a new element to any position
+#.pop removes element from an arrary
