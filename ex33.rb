@@ -29,5 +29,17 @@ end
 #write the script with a for loop
 
 puts 'This is the second method'
-def looping2
+def looping2(i,finish, counter,numbers)#rewriting it to use range operator
+	(i...finish).each do
+	 	puts "At the top i is #{i}"#print the top of the counter
+     	numbers.push(i)#add it to the number array
+  
+  	 	i += counter#adjust the start figure by +1
+  	 	puts "Numbers now: ", numbers#print the numbers in the array
+  	 	puts "At the bottom i is #{i}"
+	end
 end
+looping2(0,6,1,numbers=[])
+
+#Still need to recreate another method with a for loop
+
