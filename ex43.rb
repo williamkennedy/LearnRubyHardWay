@@ -80,7 +80,7 @@ class CentralCorridor < Scene
 			puts "The Gothon stops, tries not to laugh, then bursts out laughing and can't move."
 			puts " While he's laughing you run up and shoot him square in the head."
 			puts "putting him down, them jump through the Weapin Armoury door."
-			return 'finished'
+			return 'laser_weapon_armory'#try changing this
 
 		else
 			puts "DOES NOT COMPUTE!"
@@ -99,13 +99,14 @@ class LaserWeaponArmoury < Scene
 		puts "and you need the code to get the bomb out. If you get the code"
 		puts "wrong 10 times than lock closes forever and you can't"
 		puts "get the bomb. The code is 3 digits."
-		code = "#{rand(1..9)}#{rand1..9}#{rand1..9}"
+		code = "#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}"
 		print "[keypad]> "
+		guess = $stdin.gets.chomp
 		guesses = 0
 
-		while guess !=code && guesses < 10
+		while guess !=code && guesses < 9
 			puts "BZZZEDD!"
-			guess += 1
+			guesses += 1
 			print "[keypad]> "
 			guess = $stdin.gets.chomp
 		end
@@ -201,7 +202,7 @@ end
 
 class Finished < Scene
 	def enter()
-		puts "You wond! Good job."
+		puts "You won! Good job."
 	end
 end
 
