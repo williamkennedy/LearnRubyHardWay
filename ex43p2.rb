@@ -8,4 +8,5 @@
 
 #Part 1: have only Changed the game so I could skip to a different scence
 #Part 2: The reason why it was guessing 11 times was because the loop starts counting at 0 not 1. It said < 10 when should of said < 9
-#Part 3: 
+#Part 3: This works due to the hash map which creates a new romm class when called
+#

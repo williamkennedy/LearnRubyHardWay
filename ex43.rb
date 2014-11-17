@@ -82,6 +82,24 @@ class CentralCorridor < Scene
 			puts "putting him down, them jump through the Weapin Armoury door."
 			return 'laser_weapon_armory'#try changing this
 
+		elsif action = "new room"#The Cheat code
+			puts "Which room do you want to go to:"
+			print '> '
+
+			room = $stdin.gets.chomp
+
+			if room == 'central corridor'
+				return 'central_corridor'
+			elsif room == 'the bridge'
+				return 'the_bridge'
+			elsif room == 'escape pod'
+				return 'escape_pod'
+			else
+				puts "You chose poorly"
+				return 'finished'
+			end
+				
+
 		else
 			puts "DOES NOT COMPUTE!"
 			return 'central_corridor'
@@ -204,6 +222,10 @@ class Finished < Scene
 	def enter()
 		puts "You won! Good job."
 	end
+end
+
+##putting in battle scence
+class Battle < Scene
 end
 
 class Map
