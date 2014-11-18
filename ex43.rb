@@ -82,8 +82,8 @@ class CentralCorridor < Scene
 			puts "putting him down, them jump through the Weapin Armoury door."
 			return 'laser_weapon_armory'#try changing this
 
-		elsif action = "new room"#The Cheat code
-			puts "Which room do you want to go to:"
+		elsif action == "new room"#The Cheat code
+			puts "Which room do you want to go to: central corridor, the bridge, escape pod, battle"
 			print '> '
 
 			room = $stdin.gets.chomp
@@ -94,6 +94,9 @@ class CentralCorridor < Scene
 				return 'the_bridge'
 			elsif room == 'escape pod'
 				return 'escape_pod'
+			elsif room  == 'battle'
+				return 'battle'
+					
 			else
 				puts "You chose poorly"
 				return 'finished'
@@ -226,6 +229,53 @@ end
 
 ##putting in battle scence
 class Battle < Scene
+	def enter()
+		gothan = 100
+		userhealth = 100
+		puts "A gothan approaches for a fight"
+		puts "You pick up sword"
+		puts "What do you do? (stab, swipe, defend)"
+
+		while gothan > 0 
+
+			attack = $stdin.gets.chomp
+
+
+
+			if attack == 'stab'
+				puts "You went to stab"
+
+				hit = rand(10..50)
+				gothan = gothan - hit
+
+				puts "You have depleted the Gothans health by #{hit}"
+				puts "What do you do? (stab, swipe, defend)"
+
+			elsif attack == 'swipe'
+				puts "You went to swipe"
+
+				hit = rand(40..80)
+				gothan = gothan - hit
+
+				puts "You have depleted the Gothans health by #{hit}"
+				puts "What do you do? (stab, swipe, defend)"
+			else
+				puts "You chose poorly"
+				puts "The Gothan attacks"
+
+				userhit = rand(10..50)
+
+				userhealth = userhealth - userhit
+				puts "You have been depleted by #{userhit}"
+				puts "Are you ready to go again?"
+				puts "What do you do? (stab, swipe, defend)"
+			end
+			if gothan < 0
+				puts "The Gothon screams in pain"
+				return 'finished'
+			end
+		end
+	end	
 end
 
 class Map
@@ -234,8 +284,10 @@ class Map
 		'laser_weapon_armory' => LaserWeaponArmoury.new(),
 		'the_bridge' => TheBridge.new(),
 		'escape_pod' => EscapePod.new(),
+		'battle' => Battle.new(),
 		'death' => Death.new(),
 		'finished' => Finished.new(),
+		
 	}
 
 	def initialize(start_scene)
