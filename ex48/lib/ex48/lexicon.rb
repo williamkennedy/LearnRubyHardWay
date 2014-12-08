@@ -1,7 +1,10 @@
 class Lexicon
-	def self.scan(direction)
+	def self.scan(words)
+		words = words.split(' ')
 		
-		return [['direction', direction]]
-
+		words.collect do |w| 
+			['direction', w]
+		end
+			
 	end
 end
